@@ -22,7 +22,7 @@ namespace BluedIT.Controllers
     {
       Context context = new Context();
       User user = context.Users.Find(id);
-      if (user != null)
+      if (user != null && user.UserClass != "admin")
       {
         context.Remove(user);
         context.SaveChanges();

@@ -7,6 +7,7 @@
     public static class Tables 
     {
       public static string Users = "Users";
+      public static string Groups = "Groups";
     }
   }
 }

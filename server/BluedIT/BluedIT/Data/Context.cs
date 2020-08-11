@@ -3,8 +3,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BluedIT.Data
 {
-  public class Context : DbContext
-  {
+  public class Context : DbContext {
+        public DbSet<User> Users { get; set; }
+    
+  
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
       optionsBuilder.UseSqlServer(Constant.ConnectionString);

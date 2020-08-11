@@ -13,7 +13,7 @@ namespace BluedIT.Controllers
     public IActionResult GetById(int id)
     {
       Context context = new Context();
-      return Ok(context.Find<User>(id));
+      return Ok(context.Users.Find(id));
     }
 
     [HttpDelete]
@@ -21,7 +21,7 @@ namespace BluedIT.Controllers
     public IActionResult DeleteById(int id)
     {
       Context context = new Context();
-      User user = context.Find<User>(id);
+      User user = context.Users.Find(id);
       if (user != null)
       {
         context.Remove(user);

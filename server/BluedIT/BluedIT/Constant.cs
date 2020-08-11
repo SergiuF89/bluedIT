@@ -6,8 +6,10 @@
 
     public static class Tables 
     {
-      public static string Users = "Users";
-      public static string Groups = "Groups";
+        public static string Users = "Users";
+        public static string Groups = "Groups";
+        public static string Comments = "Comments";
+        public static string Posts = "Posts";
     }
   }
 }

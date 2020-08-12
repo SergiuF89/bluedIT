@@ -2,7 +2,7 @@
 
 namespace BluedIT.Models
 {
-    public class Groups
+    public class Group
     {
         [Key]
         public string GroupName { get; set; }

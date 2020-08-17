@@ -19,8 +19,8 @@ namespace BluedIT.Data
     {
         modelBuilder.Entity<User>().ToTable(Constant.Tables.Users);
         modelBuilder.Entity<Group>().ToTable(Constant.Tables.Groups);
-        modelBuilder.Entity<Comment>().ToTable(Constant.Tables.Comments);
         modelBuilder.Entity<Post>().ToTable(Constant.Tables.Posts);
+        modelBuilder.Entity<Comment>().ToTable(Constant.Tables.Comments);
 
 
 

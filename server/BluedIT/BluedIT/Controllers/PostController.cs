@@ -17,20 +17,20 @@ namespace BluedIT.Controllers
         }
 
         [HttpGet]
-        [Route("PostId")]
-        public IActionResult GetPostById(int PostId)
+        [Route("{id}")]
+        public IActionResult GetById(int id)
         {
             Context context = new Context();
-            return Ok(context.Posts.Find(PostId));
+            return Ok(context.Posts.Find(id));
         }
 
         [HttpDelete]
-        [Route("PostId")]
-        public IActionResult DeletePostById(int postId)
+        [Route("{id}")]
+        public ActionResult DeleteById(int id)
         {
             Context context = new Context();
-            Post post = context.Posts.Find(postId);
-            if (postId != 0)
+            Post post = context.Posts.Find(id);
+            if (post.Id == id)
             {
                 context.Remove(post);
                 context.SaveChanges();

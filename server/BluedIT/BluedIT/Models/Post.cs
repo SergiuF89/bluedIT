@@ -9,5 +9,6 @@
         public string Comments { get; set; }
         public string Tag { get; set; }
         public string Category { get; set; }
+        public Group Group { get; set; }
     }
 }

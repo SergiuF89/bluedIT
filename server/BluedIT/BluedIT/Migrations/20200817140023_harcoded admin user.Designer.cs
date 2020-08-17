@@ -3,14 +3,16 @@ using BluedIT.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BluedIT.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20200817140023_harcoded admin user")]
+    partial class harcodedadminuser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,32 +55,6 @@ namespace BluedIT.Migrations
                     b.HasKey("GroupName");
 
                     b.ToTable("Groups");
-
-                    b.HasData(
-                        new
-                        {
-                            GroupName = "Fortnite",
-                            GroupCategory = "Gaming",
-                            GroupDescription = "The developer supported, community-run subreddit dedicated to the Fortnite: Battle Royale game mode by Epic Games. Tailored for those who want to keep up to date on the pro scene, tournaments, competitive plays and figure out new tips/tricks on how to play the current meta."
-                        },
-                        new
-                        {
-                            GroupName = "RocketLeague",
-                            GroupCategory = "Gaming",
-                            GroupDescription = "Rocket-powered cars meet soccer in Psyonix's success title Rocket League. Join the community for Rocket League news, discussion, highlights and more!"
-                        },
-                        new
-                        {
-                            GroupName = "MTB",
-                            GroupCategory = "Sports",
-                            GroupDescription = "A cycling community enthusiastic about mountain biking and all things related."
-                        },
-                        new
-                        {
-                            GroupName = "Vegan",
-                            GroupCategory = "Health & Fitness",
-                            GroupDescription = "This is a place for people who are vegans or interested in veganism to share links, ideas, or recipes. "
-                        });
                 });
 
             modelBuilder.Entity("BluedIT.Models.Post", b =>

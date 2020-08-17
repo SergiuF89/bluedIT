@@ -8,7 +8,6 @@ namespace BluedIT.Data
         public DbSet<Group> Groups { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<Comment> Comments { get; set; }
-    
   
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -21,8 +20,6 @@ namespace BluedIT.Data
         modelBuilder.Entity<Group>().ToTable(Constant.Tables.Groups);
         modelBuilder.Entity<Post>().ToTable(Constant.Tables.Posts);
         modelBuilder.Entity<Comment>().ToTable(Constant.Tables.Comments);
-
-
 
         }
     }

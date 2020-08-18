@@ -6,10 +6,12 @@
 
     public static class Tables 
     {
-        public static string Users = "Users";
-        public static string Groups = "Groups";
-        public static string Comments = "Comments";
-        public static string Posts = "Posts";
+            public static string Users = "Users";
+            public static string Groups = "Groups";
+            public static string Comments = "Comments";
+            public static string Posts = "Posts";
+            public static string Category = "Categories";
+            public static string GroupCategory = "Group Categories";
     }
   }
 }

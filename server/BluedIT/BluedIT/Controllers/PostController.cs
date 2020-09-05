@@ -1,6 +1,7 @@
 ﻿using BluedIT.Data;
 using BluedIT.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 
 namespace BluedIT.Controllers
 {
@@ -9,9 +10,13 @@ namespace BluedIT.Controllers
     public class PostController : ControllerBase
     {
         [HttpPost]
-        public void Post([FromBody] Post post)
+        [Route("user/{userId}/group/{groupId}")]
+        public void Post([FromBody] Post post, int userId, int groupId)
         {
             Context context = new Context();
+            post.User = context.Users.Find(userId);
+            post.Group = context.Groups.Find(groupId);
+            
             context.Add(post);
             context.SaveChanges();
         }
@@ -21,7 +26,10 @@ namespace BluedIT.Controllers
         public IActionResult GetById(int id)
         {
             Context context = new Context();
-            return Ok(context.Posts.Find(id));
+            Post post = context.Posts.Find(id);
+            context.Entry(post).Reference(u => u.User).Load();
+            context.Entry(post).Reference(g => g.Group).Load();
+            return Ok(post);
         }
 
         [HttpDelete]

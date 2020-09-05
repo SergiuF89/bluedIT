@@ -27,9 +27,9 @@ namespace BluedIT.Data
             .HasMany(u => u.Posts)
             .WithOne(p => p.User);
 
-        modelBuilder.Entity<Post>()
-            .HasMany(p => p.Groups)
-            .WithOne(g => g.Post);
+        modelBuilder.Entity<Group>()
+            .HasMany(p => p.Posts)
+            .WithOne(g => g.Group);
 
             modelBuilder.Entity<GroupCategory>()
         .HasKey(gc => new { gc.GroupId, gc.CategoryId });
